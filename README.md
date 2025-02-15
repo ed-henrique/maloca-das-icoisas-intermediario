@@ -82,7 +82,7 @@ Projeto realizado no curso Maloca das iCoisas, módulo intermediário, pelo grup
 - [Documento de Definição de Pronto](./dod.pdf)
 - [Simulações](https://wokwi.com/projects/422903318761921537)
 - [Documento de Progresso](https://docs.google.com/document/d/174h4gjdAbioNKFlUisyWqnA86sikamhO9F9dY4ae5rM/edit?usp=sharing)
-
+- [Plano de Testes](./PlanodeTestes.pdf)
 <!--
 - [Pitch](https://www.canva.com/design/DAGZ3R3MyE4/rqdrzCDqPH6dExHXgRsWZw/edit?utm_content=DAGZ3R3MyE4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 - [Esquema de Conexão](https://wokwi.com/projects/417194889520795649)
