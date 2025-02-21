@@ -79,7 +79,8 @@ void loop() {
   client.loop();  // Keep the MQTT connection alive
   
   // Read the beatrate value
-  int heartrate = analogRead(BEATRATE);
+  float heartrate_raw = analogRead(BEATRATE);
+  int heartrate = map(heartrate_raw, 0, 4095, 0, 215);
 
   // Read temperature and humidity from the DHT11 sensor
   float temperature = dht.readTemperature(); // Temperature in Celsius
