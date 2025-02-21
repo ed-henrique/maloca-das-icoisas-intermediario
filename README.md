@@ -85,8 +85,8 @@ O uso do Potênciometro foi para simular o Sensor de Frequência Cardíaca;
 - [Documento de Progresso 15/02/2025](https://docs.google.com/document/d/174h4gjdAbioNKFlUisyWqnA86sikamhO9F9dY4ae5rM/edit?usp=sharing)
 - [Documento de Progresso Pré-Aula 21/02/2025](https://docs.google.com/document/d/1ZCO8opWifU1fWtGvcKIOWYBiDYF2y2jWGTNl99AnD20/edit?usp=sharing)
 - [Plano de Testes](./PlanodeTestes.pdf)
+- [Pitch](https://[www.canva.com/design/DAGZ3R3MyE4/rqdrzCDqPH6dExHXgRsWZw/edit?utm_content=DAGZ3R3MyE4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton](https://www.canva.com/design/DAGZ3R3MyE4/rqdrzCDqPH6dExHXgRsWZw/edit?utm_content=DAGZ3R3MyE4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton))
 <!--
-- [Pitch](https://www.canva.com/design/DAGZ3R3MyE4/rqdrzCDqPH6dExHXgRsWZw/edit?utm_content=DAGZ3R3MyE4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 - [Esquema de Conexão](https://wokwi.com/projects/417194889520795649)
 - [Documento de Progresso](https://docs.google.com/document/d/1z1uJHj0xGks3xBqaYloMBIi3Pqf4hMfBDdSm-7swn1A/edit?tab=t.0)
 -->
