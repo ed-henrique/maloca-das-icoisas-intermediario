@@ -50,6 +50,7 @@ Projeto realizado no curso Maloca das iCoisas, módulo intermediário, pelo grup
 
 ### Dispositivo do Paciente
 ![Esquema de Conexão](./simulacao_paciente.png) 
+O uso do Potênciometro foi para simular o Sensor de Frequência Cardíaca;
 
 ### Dispositivo do Médico
 ![Esquema de Conexão](./simulacao_medico.png) 
@@ -60,7 +61,7 @@ Projeto realizado no curso Maloca das iCoisas, módulo intermediário, pelo grup
 
 - 2 ESP32;
 - 1 Sensor DHT11;
-- 1 Acelerômetro;
+- 1 Acelerômetro ou 1 Sensor de Frequência Cardíaca;
 - 1 Potênciometro;
 - 1 LED;
 - 1 Buzzer;
