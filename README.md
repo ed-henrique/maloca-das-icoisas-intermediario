@@ -61,8 +61,8 @@ O uso do Potênciometro foi para simular o Sensor de Frequência Cardíaca;
 
 - 2 ESP32;
 - 1 Sensor DHT11;
-- 1 Acelerômetro ou 1 Sensor de Frequência Cardíaca;
-- 1 Potênciometro;
+- 1 Acelerômetro;
+- 1 Potênciometro ou 1 Sensor de Frequência Cardíaca;
 - 1 LED;
 - 1 Buzzer;
 - Protoboard e fios de conexão;
