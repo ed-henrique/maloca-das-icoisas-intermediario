@@ -83,7 +83,7 @@ O uso do Potênciometro foi para simular o Sensor de Frequência Cardíaca;
 - [Documento de Definição de Pronto](./dod.pdf)
 - [Simulações](https://wokwi.com/projects/422903318761921537)
 - [Documento de Progresso 15/02/2025](https://docs.google.com/document/d/174h4gjdAbioNKFlUisyWqnA86sikamhO9F9dY4ae5rM/edit?usp=sharing)
-- [Documento de Progresso 21/02/2025](https://docs.google.com/document/d/1ZCO8opWifU1fWtGvcKIOWYBiDYF2y2jWGTNl99AnD20/edit?usp=sharing)
+- [Documento de Progresso Pré-Aula 21/02/2025](https://docs.google.com/document/d/1ZCO8opWifU1fWtGvcKIOWYBiDYF2y2jWGTNl99AnD20/edit?usp=sharing)
 - [Plano de Testes](./PlanodeTestes.pdf)
 <!--
 - [Pitch](https://www.canva.com/design/DAGZ3R3MyE4/rqdrzCDqPH6dExHXgRsWZw/edit?utm_content=DAGZ3R3MyE4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
