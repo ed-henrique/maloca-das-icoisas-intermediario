@@ -11,9 +11,9 @@ cardíaco e movimento ao servidor web regularmente.
 #include <DHT.h>
 #include "RoboCore_MMA8452Q.h"
 
-#define LED           16        // LED connected to pin 16
-#define POTENTIOMETER 33       // Potentiometer connected to pin 33 (Analog input)
-#define DHT_PIN       12        // DHT11 sensor data pin
+#define LED           16       // LED connected to pin 16
+#define BEATRATE      A0       // Potentiometer connected to pin 33 (Analog input)
+#define DHT_PIN       12       // DHT11 sensor data pin
 #define DHT_TYPE      DHT11    // Specify DHT11 sensor
 
 const char* ssid = "Macuxi Digital";
@@ -39,7 +39,7 @@ void setup() {
   pinMode(LED, OUTPUT);
   
   // Set up the potentiometer pin as input
-  pinMode(POTENTIOMETER, INPUT);
+  pinMode(BEATRATE, INPUT);
   
   // Connect to WiFi
   WiFi.begin(ssid, password);
@@ -78,9 +78,8 @@ void loop() {
   
   client.loop();  // Keep the MQTT connection alive
   
-  // Read the potentiometer value (range 0 to 4095)
-  int potValue = analogRead(POTENTIOMETER);
-  int heartrate = map(potValue, 0, 4095, 60, 120); // Map potentiometer value to heart rate range (60 to 120)
+  // Read the beatrate value
+  int heartrate = analogRead(BEATRATE);
 
   // Read temperature and humidity from the DHT11 sensor
   float temperature = dht.readTemperature(); // Temperature in Celsius
@@ -104,5 +103,5 @@ void loop() {
   Serial.println(message);
 
   // Delay before next loop
-  delay(10000);  // Send data every 10 seconds
+  delay(5000);  // Send data every 10 seconds
 }
