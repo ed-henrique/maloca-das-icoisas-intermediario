@@ -70,12 +70,7 @@ void loop() {
   client.loop();
 
   // Intermittently turn on and off the alert (LED + BUZZER) for 5 seconds
-  if (alert) {
-    enable();
-    delay(500);  // LED and Buzzer on for 500ms
-    disable();
-    delay(500);  // LED and Buzzer off for 500ms
-  }
+  
 }
 
 void callback(char* topic, byte* payload, unsigned int length) {
@@ -87,10 +82,14 @@ void callback(char* topic, byte* payload, unsigned int length) {
   
   // Trigger the alert if the message is received
   if (String(topic) == "pacientes_pos_cirurgicos/monitoramento") {
-    if (message == "ALERT") {
-      alert = true;  // Start the alert (LED + BUZZER)
-      delay(5000);   // Continue for 5 seconds
-      alert = false; // Stop the alert
+    Serial.println(message);
+    if (String(message) == "ALERT") {
+      for (int i = 0; i < 5; i++) {
+        enable();
+        delay(500);  // LED and Buzzer on for 500ms
+        disable();
+        delay(500);  // LED and Buzzer off for 500ms
+      }
     }
   }
 }
