@@ -22,13 +22,9 @@ MQTT_PORT = 1883
 MQTT_TOPIC = 'pacientes_pos_cirurgicos/monitoramento'
 
 def esta_de_cabeca_para_baixo(x, y, z):
-    # Considerando que a gravidade é aproximadamente 9.8 m/s²
-    gravidade = 9.8
-    # Margem de erro para considerar que está parado
-    margem_erro = 0.5
+    margem_erro = 0.05
 
-    # Verifica se Z está próximo de +1g e X e Y estão próximos de 0
-    if abs(z - gravidade) < margem_erro and abs(x) < margem_erro and abs(y) < margem_erro:
+    if z + 0.95 < margem_erro and x < margem_erro and y < margem_erro:
         return True
     else:
         return False
@@ -60,7 +56,7 @@ def on_message(client, userdata, msg):
         }
 
         conds = [
-            dados_atualizados['batimento_cardiado'] > 130,
+            dados_atualizados['batimento_cardiaco'] > 130,
             dados_atualizados['temperatura'] > 37.8,
             esta_de_cabeca_para_baixo(dados_atualizados['movimento_x'], dados_atualizados['movimento_y'], dados_atualizados['movimento_z']),
         ]
