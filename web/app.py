@@ -12,7 +12,7 @@ utc=pytz.UTC
 app = Flask(__name__)
 
 # Inicialização do Firebase Admin
-cred = credentials.Certificate(r"C:\Users\ALUNOS MALOCA\Downloads\maloca intermediario\maloca-intermediario-firebase-adminsdk-fbsvc-222aac05ef.json")
+cred = credentials.Certificate(r"C:\Users\ALUNOS MALOCA\Downloads\maloca intermediario\maloca-intermediario-firebase-adminsdk-fbsvc-d8709d321d.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -62,7 +62,7 @@ def on_message(client, userdata, msg):
         ]
 
         if True in conds:
-            client.publish(MQTT_TOPIC, "ALERT")
+            client.publish(MQTT_TOPIC, b"ALERT")
 
         # Atualiza ou cria o documento do paciente no Firestore
         db.collection('pacientes').document(paciente_id).collection('dados').add(dados_atualizados)
