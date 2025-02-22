@@ -85,6 +85,7 @@ O uso do Potênciometro foi para simular o Sensor de Frequência Cardíaca;
 - [Documento de Progresso 15/02/2025](https://docs.google.com/document/d/174h4gjdAbioNKFlUisyWqnA86sikamhO9F9dY4ae5rM/edit?usp=sharing)
 - [Documento de Progresso Pré-Aula 21/02/2025](https://docs.google.com/document/d/1ZCO8opWifU1fWtGvcKIOWYBiDYF2y2jWGTNl99AnD20/edit?usp=sharing)
 - [Documento de Progresso Pós-Aula 21/02/2025](https://docs.google.com/document/d/1ydvksce7CGkMc7awz8sNJ96ugoHu5u8vWRKMDGR6uS4/edit?usp=sharing)
+- [Documento de Progresso Pré-Aula 22/02/2025](https://docs.google.com/document/d/1-wE_NuezTaNCoUxbeWSJKdCLA_41KL-V-qGMGUVwuMM/edit?usp=sharing)
 - [Plano de Testes](./PlanodetestesUpdate21fevereiro.pdf)
 - [Pitch](https://www.canva.com/design/DAGZ3R3MyE4/rqdrzCDqPH6dExHXgRsWZw/edit?utm_content=DAGZ3R3MyE4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 <!--
