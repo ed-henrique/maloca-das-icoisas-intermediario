@@ -3,9 +3,7 @@ FROM python:3.13-slim
 WORKDIR /app
 
 COPY . .
-RUN python -m venv .venv && \
-    source .venv/bin/activate && \
-    python -m pip install Flask paho-mqtt firebase-admin
+RUN python -m pip install Flask paho-mqtt firebase-admin
 
 EXPOSE 5000
 

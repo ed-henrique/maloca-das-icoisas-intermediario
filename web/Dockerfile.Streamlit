@@ -3,9 +3,7 @@ FROM python:3.13-slim
 WORKDIR /app
 
 COPY . .
-RUN python -m venv .venv && \
-    source .venv/bin/activate && \
-    python -m pip install streamlit
+RUN python -m pip install streamlit
 
 EXPOSE 8000
 
