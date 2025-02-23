@@ -19,7 +19,7 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 # Configurações do MQTT
-MQTT_BROKER = os.environ['MOSQUITTO']
+MQTT_BROKER = os.getenv('MOSQUITTO')
 MQTT_PORT = 1883
 MQTT_TOPIC = 'pacientes_pos_cirurgicos/monitoramento'
 
