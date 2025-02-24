@@ -5,7 +5,7 @@ from datetime import datetime
 import time
 
 # URL da API Flask para obter dados dos pacientes
-API_URL = 'http://localhost:5000/pacientes'
+API_URL = os.getenv('FLASK_URL')
 
 # Barra lateral para seleção de paciente e período
 with st.sidebar:
