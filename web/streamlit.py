@@ -3,6 +3,7 @@ import pandas as pd
 import requests
 from datetime import datetime
 import time
+import os
 
 # URL da API Flask para obter dados dos pacientes
 API_URL = os.getenv('FLASK_URL')
