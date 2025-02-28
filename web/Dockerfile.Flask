@@ -5,6 +5,7 @@ WORKDIR /app
 
 COPY . .
 RUN python -m pip install Flask paho-mqtt firebase-admin pytz python-dotenv
+RUN chmod 777 /app/script.sh
 
 EXPOSE 5000
 
