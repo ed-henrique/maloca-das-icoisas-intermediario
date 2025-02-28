@@ -3,8 +3,9 @@ FROM python:3.13-slim
 WORKDIR /app
 
 COPY . .
-RUN python -m pip install Flask paho-mqtt firebase-admin pytz python-dotenv
+RUN python -m pip install Flask paho-mqtt firebase-admin pytz python-dotenv &&
+    chmod +x /app/script.sh
 
 EXPOSE 5000
 
-ENTRYPOINT ["flask", "run", "--host=0.0.0.0"]
+ENTRYPOINT ["bash", "-c", "/app/script.sh"]
