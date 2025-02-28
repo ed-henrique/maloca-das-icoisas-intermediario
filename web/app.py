@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 # Inicialização do Firebase Admin
 cred = credentials.Certificate(
-    r"/app/intermediary-maloca-firebase-adminsdk-fbsvc-ba0ed46f3c.json")
+    r"/app/config.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
