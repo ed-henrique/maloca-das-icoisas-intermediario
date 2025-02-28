@@ -1,12 +1,37 @@
 import streamlit as st
 import pandas as pd
-import requests
-from datetime import datetime
+import numpy as np
+from datetime import datetime, timedelta
 import time
 import os
 
-# URL da API Flask para obter dados dos pacientes
-API_URL = os.getenv('FLASK_URL')
+# Fake data generation function
+def generate_fake_data(paciente, data_inicio_periodo, tempo_inicio_periodo, data_fim_periodo, tempo_fim_periodo):
+    # Generate fake timestamps between start and end period
+    start_datetime = datetime.combine(data_inicio_periodo, tempo_inicio_periodo)
+    end_datetime = datetime.combine(data_fim_periodo, tempo_fim_periodo)
+    
+    num_points = 100  # Number of data points to simulate
+    timestamps = [start_datetime + timedelta(seconds=i*(end_datetime - start_datetime).total_seconds()/num_points) for i in range(num_points)]
+    
+    # Generate fake data for movement and other metrics
+    movimento_x = np.random.randn(num_points)
+    movimento_y = np.random.randn(num_points)
+    movimento_z = np.random.randn(num_points)
+    temperatura = np.random.normal(loc=37, scale=0.5, size=num_points)  # Temperature around 37°C
+    batimento_cardiaco = np.random.normal(loc=80, scale=10, size=num_points)  # Heart rate around 80 BPM
+
+    # Create DataFrame with the fake data
+    df = pd.DataFrame({
+        'timestamp': timestamps,
+        'movimento_x': movimento_x,
+        'movimento_y': movimento_y,
+        'movimento_z': movimento_z,
+        'temperatura': temperatura,
+        'batimento_cardiaco': batimento_cardiaco
+    })
+
+    return df
 
 # Barra lateral para seleção de paciente e período
 with st.sidebar:
@@ -21,25 +46,6 @@ with st.sidebar:
 
 # Criar um placeholder para os dados
 placeholder = st.empty()
-
-# Função para buscar dados da API
-def fetch_data(paciente, data_inicio_periodo, tempo_inicio_periodo, data_fim_periodo, tempo_fim_periodo):
-    params = {
-        'paciente': paciente,
-        'periodo_inicio': datetime.combine(data_inicio_periodo, tempo_inicio_periodo).isoformat(),
-        'periodo_fim': datetime.combine(data_fim_periodo, tempo_fim_periodo).isoformat()
-    }
-
-    try:
-        resposta = requests.get(API_URL, params=params)
-        if resposta.status_code == 200:
-            return resposta.json()
-        else:
-            st.error(f"Erro ao buscar dados: {resposta.text}")
-    except Exception as e:
-        st.error(f"Erro na comunicação com a API: {e}")
-
-    return None
 
 # Função para exibir dados
 def display_data():
@@ -60,26 +66,18 @@ def display_data():
 
 # Atualiza os dados a cada 10 segundos
 while True:
-    # Chama a função para buscar os dados
-    dados_api = fetch_data(paciente, data_inicio_periodo, tempo_inicio_periodo, data_fim_periodo, tempo_fim_periodo)
+    # Gerar dados falsos
+    df = generate_fake_data(paciente, data_inicio_periodo, tempo_inicio_periodo, data_fim_periodo, tempo_fim_periodo)
 
-    if dados_api:
-        # Criando DataFrame corretamente para cada métrica
-        df = pd.DataFrame(dados_api)  # Envolvendo em lista para evitar erro de iteração
+    # Armazenar os dados na sessão
+    st.session_state['dados_api'] = df
 
-        # Tratando dados individuais (float)
-        if 'timestamp' in df:
-            df['timestamp'] = pd.to_datetime(df['timestamp'])
-
-        # Armazenar os dados na sessão
-        st.session_state['dados_api'] = df
-
-        # Exibição dos dados
-        with placeholder.container():
-            display_data()
+    # Exibição dos dados
+    with placeholder.container():
+        display_data()
 
     # Espera 10 segundos antes de atualizar os dados
-    time.sleep(20)
+    time.sleep(10)
 
     # Simula o refresh da página, sem `st.experimental_rerun()`
     placeholder.empty()
