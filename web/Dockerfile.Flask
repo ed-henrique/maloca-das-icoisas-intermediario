@@ -8,4 +8,4 @@ RUN python -m pip install Flask paho-mqtt firebase-admin pytz python-dotenv
 
 EXPOSE 5000
 
-ENTRYPOINT ["bash", "-c", "/app/script.sh"]
+ENTRYPOINT ["sh", "-c", "/app/script.sh"]
