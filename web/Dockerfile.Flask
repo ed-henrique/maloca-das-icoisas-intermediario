@@ -9,4 +9,4 @@ RUN chmod 777 /app/script.sh
 
 EXPOSE 5000
 
-ENTRYPOINT ["sh", "-c", "/app/script.sh"]
+ENTRYPOINT ["bash", "-c", "/app/script.sh"]
